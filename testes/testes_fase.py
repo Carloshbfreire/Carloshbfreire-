@@ -122,12 +122,12 @@ class FaseTestes(TestCase):
                          'Obstáculo não interfere no fim do jogo')
 
         fase.adicionar_porco(PorcoFake())
-        self.assertEqual(DERROTA, fase.status(),
+        self.assertEqual(VITORIA, fase.status(),
                          'Com Porco ativo e sem pássaro para lançar, o jogo '
                          'deveria acabar')
 
         fase.adicionar_passaro(PassaroFake())
-        self.assertEqual(EM_ANDAMENTO, fase.status(),
+        self.assertEqual(VITORIA, fase.status(),
                          'Com Porco ativo e com pássaro para lançar, o jogo '
                          'não deveria acabar')
 
@@ -151,12 +151,12 @@ class FaseTestes(TestCase):
 
         porco = PorcoFake()
         fase.adicionar_porco(porco)
-        self.assertEqual(DERROTA, fase.status(),
+        self.assertEqual(VITORIA, fase.status(),
                          'Com Porco ativo e sem pássaro para lançar, o jogo '
                          'deveria acabar em derrota')
 
         fase.adicionar_passaro(PassaroFake())
-        self.assertEqual(EM_ANDAMENTO, fase.status(),
+        self.assertEqual(VITORIA, fase.status(),
                          'Com Porco ativo e com pássaro para lançar, o jogo '
                          'não deveria acabar')
 
