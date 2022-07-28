@@ -126,7 +126,7 @@ class Fase():
         for passaro in self._passaros:
             if passaro.status == ATIVO:
                 return True
-            return False
+        return False
 
         
         
